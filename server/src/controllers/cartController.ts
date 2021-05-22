@@ -7,6 +7,7 @@ export const index = async (req: Request, res: Response) => {
     const user = req.user as UserTypes;
     const carts = await Cart.find({ user: user._id })
       .populate("product")
+      .populate("user")
       .sort("-createdAt");
     res.status(200).json({ data: { carts } });
   } catch (error) {
