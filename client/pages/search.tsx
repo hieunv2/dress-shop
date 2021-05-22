@@ -52,10 +52,6 @@ const Search: React.FC = () => {
     getProducts();
   }, [category, sort, keyword]);
 
-  const handleTabChange = (selected: string) => {
-    Router.push({ pathname, query: { ...query, category: selected } });
-  };
-
   const handleFilterChange = (selected: string) => {
     Router.push({ pathname, query: { ...query, sort: selected } });
   };
@@ -72,7 +68,6 @@ const Search: React.FC = () => {
           <SearchBar onSubmit={handleSearchSubmit} style={{ width: '100%' }} isFocus />
         </div>
         <div className={styles.sortContainer}>
-          <SearchCategory active={category} onChangeTab={handleTabChange} />
           <SearchFilter handleChange={handleFilterChange} active={sort} />
         </div>
         {isLoading ? (

@@ -30,6 +30,11 @@ const Sidebar: React.FC = () => {
               <a>Products</a>
             </Link>
           </li>
+          <li className={`${isActive('products') ? styles.active : ''}`}>
+            <Link href="/admin?selected_page=orders">
+              <a>Orders</a>
+            </Link>
+          </li>
         </ul>
       </aside>
     </>

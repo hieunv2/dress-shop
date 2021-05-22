@@ -41,31 +41,37 @@ const Home: React.FC<Props> = ({ banners, categories }) => {
     <>
       <Banners banners={banners} />
       <Container className={styles.container}>
-        <Heading>Shop Categories</Heading>
-        <Categories categories={categories} />
-        <Heading>Product Overview</Heading>
-        {isLoading ? <ProductListSkeleton number={20} /> : <ProductList products={products} />}
-        {isLoadingMore && (
-          <div className={styles.loadingWrapper}>
-            <Spinner color={colors.primary} size={30} />
+        <div className={styles.row}>
+          <div className={styles.col3}>
+            <Heading>Shop Categories</Heading>
+            <Categories categories={categories} />
           </div>
-        )}
+          <div className={styles.col9}>
+            <Heading>Product Overview</Heading>
+            {isLoading ? <ProductListSkeleton number={20} /> : <ProductList products={products} />}
+            {isLoadingMore && (
+              <div className={styles.loadingWrapper}>
+                <Spinner color={colors.primary} size={30} />
+              </div>
+            )}
 
-        {showLoadMore() && (
-          <div className={styles.loadMore}>
-            <Button
-              title="Load More"
-              className={styles.loadMoreBtn}
-              onClick={handleLoadMore}
-              type="button"
-              variant="outline"
-            />
+            {showLoadMore() && (
+              <div className={styles.loadMore}>
+                <Button
+                  title="Load More"
+                  className={styles.loadMoreBtn}
+                  onClick={handleLoadMore}
+                  type="button"
+                  variant="outline"
+                />
+              </div>
+            )}
+
+            {!hasLoadMore && (
+              <div className={styles.reachedEnd}>No more products. You have reached the end.</div>
+            )}
           </div>
-        )}
-
-        {!hasLoadMore && (
-          <div className={styles.reachedEnd}>No more products. You have reached the end.</div>
-        )}
+        </div>
       </Container>
       <MobileBottomMenu />
     </>

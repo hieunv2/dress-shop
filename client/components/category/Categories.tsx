@@ -13,14 +13,8 @@ const Categories: React.FC<Props> = ({ categories }) => {
       <div className={styles.categoryContainer}>
         {categories.map((category) => (
           <div className={styles.list} key={category._id}>
-            <Link href={`/search?category=${category.name.toLowerCase()}`}>
+            <Link href={`/search?category=${category._id}`}>
               <a>
-                <div
-                  className={styles.categoryImg}
-                  style={{
-                    backgroundImage: `url(${category.imageURL})`,
-                  }}
-                ></div>
                 <div className={styles.name}>{category.name}</div>
               </a>
             </Link>

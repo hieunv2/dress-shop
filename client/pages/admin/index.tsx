@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Dashboard, Products, Categories } from 'components/admin';
+import { Dashboard, Products, Categories, Orders } from 'components/admin';
 import { useAuth } from 'contexts';
 import { Alert } from 'components/ui';
 
@@ -17,6 +17,8 @@ const Admin: React.FC = () => {
         return <Products />;
       case 'categories':
         return <Categories />;
+      case 'orders':
+        return <Orders />;
       default:
         return null;
     }
