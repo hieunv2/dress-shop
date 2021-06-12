@@ -7,6 +7,11 @@ export type User = {
   role: 'user' | 'admin';
 };
 
+export interface AddUser {
+  email?: string;
+  name: string;
+  role: 'user' | 'admin';
+}
 export type UserFields = {
   name: string;
   password: string;

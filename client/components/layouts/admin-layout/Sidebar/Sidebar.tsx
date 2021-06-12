@@ -20,6 +20,11 @@ const Sidebar: React.FC = () => {
               <a>Dashboard</a>
             </Link>
           </li>
+          <li className={`${isActive('users') ? styles.active : ''}`}>
+            <Link href="/admin?selected_page=users">
+              <a>Users</a>
+            </Link>
+          </li>
           <li className={`${isActive('categories') ? styles.active : ''}`}>
             <Link href="/admin?selected_page=categories">
               <a>Category</a>

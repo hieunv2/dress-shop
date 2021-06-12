@@ -5,3 +5,4 @@ export * from './categoryService';
 export * from './checkoutService';
 export * from './dashboardService';
 export * from './productService';
+export * from './userService';
