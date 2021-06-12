@@ -100,6 +100,26 @@ export const productValidation = () => {
   ];
 };
 
+export const userValidation = () => {
+  return [
+    body("name")
+      .isLength({ min: 3 })
+      .withMessage("Name must be at least 3 chars long")
+      .trim()
+      .escape(),
+    body("email")
+      .isLength({ min: 3, max: 400 })
+      .trim()
+      .escape()
+      .withMessage("Email must be at least 6 chars long"),
+    body("password")
+      .isLength({ min: 3 })
+      .trim()
+      .escape()
+      .withMessage("Password is required field"),
+  ];
+};
+
 export const categoryValidation = () => {
   return [
     body("name")

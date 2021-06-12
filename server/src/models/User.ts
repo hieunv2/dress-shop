@@ -5,7 +5,6 @@ import { Role } from "../types";
 export interface UserDocument extends Document {
   name: string;
   email: string;
-  imageURL?: string;
   password?: string;
   role: Role;
   carts: Types.ObjectId[];
